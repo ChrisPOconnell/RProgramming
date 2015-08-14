@@ -15,14 +15,22 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   ## Return the mean of the pollutant across all monitors list
   ## in the 'id' vector (ignoring NA values)
   ## NOTE: Do not round the result!
-
+  
+    #Debug, what class is id?
+  class(pollutantmean[id])
+  pollutantmean(id)
+  
+#Code to set up While loop counters/variables.
   i <- 0            #Set counter position
   x <- length(id)   #Get end position for while loop
  
   while(i < x) {
     i <- i + 1        #Increase index counter
-    print(id[i])
-    
+    #printed_id <- print(id[i])   #This code works, prints each ID individually.
+    class(id)                  #This is not returning anything.
+ #   if(id[i] < 10) {
+#      "ID IS LESS THAN 10!"
+#    }
     
 }
    
