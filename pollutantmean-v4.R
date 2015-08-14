@@ -10,28 +10,27 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
   
   files_full <- list.files(path = directory, full.names=TRUE) 
   #Experimenting
-  #dat <- data.frame()
+  dat <- data.frame()
   
-    #Code to set up While loop counters/variables.
-  i <- 0            #Set counter position
+  #Code to set up While loop counters/variables.
+  #i <- 0            #Set counter position
   x <- length(id)   #Get end position for while loop
-  readings <- data.frame()
   
-  while(i < x) {
-    i <-  i + 1
+  read.csv(files_full[id[1]])#[,pollutant]
+  
+  #for(i in 1:10) {
+    #i <-  i + 1
     #print(files_full[[i]]) #this works nicely, except I will always be the first position.  We want to specify the value of ID[i]
     #print(files_full[id[i]])     #This works great, pulls the proper ID and everything.  Works for multiple IDs in the context of this loop.
-    #index <- id[i]
-    #print(index)
+    
+    
     #Experimenting
     #filename <- as.character(files_full[id[i]])
     #filename
-    temp_dat <- read.csv(file = files_full[id[i]], header = TRUE)[,pollutant]
-    #readings <- rbind(readings,read.csv(file = files_full[id[i]], header = TRUE)[,pollutant])
-    readings <- rbind(readings,temp_dat)
-#    print(readings)
-    mean(readings,na.rm = TRUE)
-  }
+   # read.csv(files_full[i])#[,pollutant]
+   # readings #[(!is.na(pollutant))]
+    
+#  }
   
   
 }
