@@ -27,7 +27,7 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
     readings <- rbind(read.csv(file = files_full[id[i]], header = TRUE)[,pollutant],readings)
     #print(temp_dat)
     #readings <- rbind(readings,temp_dat)
-    dim(readings)
+    #dim(readings)
     print(readings)
   }
   sub_readings <- readings#[,pollutant]    #This line subsets the data based on polutant type...  
