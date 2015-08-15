@@ -30,5 +30,5 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
     #dim(readings)
     print(readings)
   }
-  sub_readings <- readings#[,pollutant]    #This line subsets the data based on polutant type...  
+  
 }
