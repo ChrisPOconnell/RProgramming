@@ -30,10 +30,9 @@ complete <- function(directory, id = 1:332) {
   while(i < total_observations) {
     i <-  i + 1
     temp_dat <- read.csv(file = files_full[id[i]])
-    complete_nobs <- complete.cases(temp_dat)
-    complete_nobs_sum <- sum(complete_nobs)
-    #complete_list <- list(complete_list,complete_nobs_sum))
-    
+    complete_nobs <- complete.cases(temp_dat)       #dumps complete cases from file into variable
+    complete_nobs_sum <- sum(complete_nobs)         #counts the complete cases in that file
+
     id_list <- c(id_list,id[i])                     #Populate list with ID numbers based on value of id[i]
     nobs_list <- (c(nobs_list,complete_nobs_sum))   #Populate nobs_list based on value of sum(complete_nobs)
 
@@ -48,8 +47,6 @@ complete <- function(directory, id = 1:332) {
 rownames(total) = 1:nrow(total)
 print(total)
 
-#print(id_list)
-#print(nobs_list)
 ### DEBUG ###
 #print(id_list)
 #print(complete_nobs_sum)
