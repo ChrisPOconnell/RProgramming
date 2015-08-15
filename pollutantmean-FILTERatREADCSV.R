@@ -23,7 +23,6 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
     i <-  i + 1
     #The following line introduced major errors during the RBIND function if the [,pollutant] was not commented out.
     #I had hoped originally to only import the pollutant column in order to save memory and increase processing speed.
-    
     #temp_dat <- read.csv(file = files_full[id[i]], header = TRUE)[,pollutant]
     readings <- rbind(read.csv(file = files_full[id[i]], header = TRUE)[,pollutant],readings)
     #print(temp_dat)
@@ -32,5 +31,4 @@ pollutantmean <- function(directory, pollutant, id = 1:332) {
     print(readings)
   }
   sub_readings <- readings#[,pollutant]    #This line subsets the data based on polutant type...  
-  mean(sub_readings,na.rm = TRUE)
 }
