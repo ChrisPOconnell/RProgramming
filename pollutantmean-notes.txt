@@ -1,0 +1,3 @@
+pollutantmean("specdata", "nitrate", 70:72)
+## [1] 1.706
+pollutantmean("C:/Users/chris_000/Documents/GitHub/specdata/","nitrate",70:72)

@@ -1,5 +1,8 @@
 pollutantmean <- function(directory, pollutant, id = 1:332) {
-  
+#SAMPLE COMMAND
+#pollutantmean("C:/Users/chris_000/Documents/GitHub/specdata/","nitrate",70:72)
+
+    
   #directory <- "C:/Users/ChrisP/Documents/GitHub/specdata"       #SURFACE PRO 3
   #directory <-  "C:/Users/chris_000/Documents/GitHub/specdata/"  #e6430
   
@@ -17,7 +20,7 @@ files_full <- list.files(path = directory, full.names=TRUE) #by the way, this is
                     #length(id) would work, so no need for an additional variable.
   
   readings <- data.frame()  #the readings from our observation files.
-  
+  print(readings)
   while(i < length(id)) {
     i <-  i + 1
     
@@ -29,5 +32,7 @@ files_full <- list.files(path = directory, full.names=TRUE) #by the way, this is
   sub_readings <- readings[,pollutant]    #This line subsets the data based on polutant type...  
                                           #Less processing and memory would be required if this filter 
                                           #could be applied during read.csv.
-  mean(sub_readings,na.rm = TRUE)
+  
+  mean(sub_readings,na.rm = TRUE)         #I'm not super pleased with the way this turned out either.  I would like 
+                                          #to find another way to get these na values out.
 }
